@@ -1,0 +1,9 @@
+<input #numInput [(ngModel)]="str"> <button (click)="operatorKey($event.target.innerHTML)">+</button>
+<button (click)="operatorKey($event.target.innerHTML)">-</button>
+<button (click)="operatorKey($event.target.innerHTML)">-</button>
+<button (click)="operatorKey($event.target.innerHTML)">*</button>
+<button (click)="operatorKey($event.target.innerHTML)">/</button>
+<button (click)="onResultKey()">=</button>
+<button (click)="createNewUl()">create new ul</button>
+
+<h3>{{result}}</h3>
