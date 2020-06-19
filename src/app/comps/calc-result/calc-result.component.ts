@@ -8,32 +8,36 @@ import { ResultsService } from 'src/app/services/results.service';
 })
 export class CalcResultComponent implements OnInit {
 
-  str:string;
-  result:string;
+  str: string;
+  result: string;
 
-  constructor(private myservice:ResultsService) { }
+  constructor(private myservice: ResultsService) { }
 
-  @ViewChild('numInput') myInput:ElementRef;
+  @ViewChild('numInput') myInput: ElementRef;
 
   ngOnInit(): void {
   }
-  operatorKey(operand:string){
+  operatorKey(operand: string){
     //  this.myInput.nativeElement.value += operand;
      this.str += operand;
-    
+
   }
   onResultKey(){
-    this.result = this.str +" = "+ eval(this.str);
+    // tslint:disable-next-line:no-eval
+    this.result = this.str + ' = ' + eval(this.str);
     this.myservice.resultsArr.push(this.result);
-    this.str = "";
+    this.str = '';
     console.log(this.myservice.resultsArr);
-    
+
 
   }
   createNewUl(){
     this.myservice.matrixResultsArr.push(this.myservice.resultsArr);
     this.myservice.resultsArr = [];
     console.log(this.myservice.matrixResultsArr);
+  }
+  showHistory(){
+    this.myservice.showhistory = true;
   }
 
 }

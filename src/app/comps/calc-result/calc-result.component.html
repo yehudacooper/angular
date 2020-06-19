@@ -5,5 +5,10 @@
 <button (click)="operatorKey($event.target.innerHTML)">/</button>
 <button (click)="onResultKey()">=</button>
 <button (click)="createNewUl()">create new ul</button>
+<button (click)="showHistory()">show history</button>
 
 <h3>{{result}}</h3>
+
+<ul *ngIf="myservice.resultsArr[0]">
+    <li *ngFor="let calc of myservice.resultsArr">{{calc}}</li>
+</ul>

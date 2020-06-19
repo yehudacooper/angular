@@ -1,9 +1,6 @@
 
-
-<!-- <ul>
-    <li *ngFor="let x of myservice.matrixResultsArr[0] ">{{x}}</li>
-</ul> -->
-
-<ul *ngFor="let x of myservice.matrixResultsArr">
-    <li *ngFor="let calc of x">{{calc}}</li>
-</ul>
+<div *ngIf="myservice.showhistory">
+    <ul *ngFor="let x of myservice.matrixResultsArr">
+        <li *ngFor="let calc of x">{{calc}}</li>
+    </ul>
+</div>

@@ -7,5 +7,6 @@ export class ResultsService {
 
   resultsArr:string[] = [];
   matrixResultsArr:string[][] = [];
+  showhistory:boolean = false;
   constructor() { }
 }
