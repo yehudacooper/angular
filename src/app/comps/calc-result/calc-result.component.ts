@@ -11,7 +11,7 @@ export class CalcResultComponent implements OnInit {
   str: string;
   result: string;
 
-  constructor(private myservice: ResultsService) { }
+  constructor(public myservice: ResultsService) { }
 
   @ViewChild('numInput') myInput: ElementRef;
 
